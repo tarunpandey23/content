@@ -1,0 +1,347 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: "prod_payme_frontend_new_1a"
+    static_configs:
+    - targets: ["10.10.143.217:9100"]
+
+  - job_name: "prod_payme_frontend_new_1b"
+    static_configs:
+      - targets: [ "10.10.153.42:9100" ]
+
+  - job_name: "prod_crm_frontend_new_1a"
+    static_configs:
+      - targets: [ "10.10.128.90:9100" ]
+
+  - job_name: "prod_crm_frontend_new_1b"
+    static_configs:
+      - targets: [ "10.10.153.49:9100" ]
+
+  - job_name: "prod_web_flow_2_1a"
+    static_configs:
+      - targets: [ "10.10.129.110:9100" ]
+
+  - job_name: "prod_web_flow_2_1b"
+    static_configs:
+      - targets: [ "10.10.146.135:9100" ]
+
+  - job_name: "prod_scb_frontend_1a"
+    static_configs:
+      - targets: [ "10.10.141.57:9100" ]
+
+  - job_name: "prod_scb_frontend_1b"
+    static_configs:
+      - targets: [ "10.10.154.243:9100" ]
+
+  - job_name: "prod_gpay_spot_2_0_1a"
+    static_configs:
+      - targets: [ "10.10.142.11:9100" ]
+
+  - job_name: "prod_gpay_spot_2_0_1b"
+    static_configs:
+      - targets: [ "10.10.144.32:9100" ]
+
+  - job_name: "prod_lms_frontend_1a"
+    static_configs:
+      - targets: [ "10.10.132.220:9100" ]
+
+  - job_name: "prod_lms_frontend_1b"
+    static_configs:
+      - targets: [ "10.10.159.32:9100" ]
+
+  - job_name: "prod_cibil_report_1a"
+    static_configs:
+      - targets: [ "10.10.141.225:9100" ]
+
+  - job_name: "prod_support_old_1a"
+    static_configs:
+      - targets: [ "10.10.131.72:9100" ]
+
+  - job_name: "prod_lms_reports_1a"
+    static_configs:
+      - targets: [ "10.10.130.46:9100" ]
+
+  - job_name: "prod_lms_reports_1b"
+    static_configs:
+      - targets: [ "10.10.155.23:9100" ]
+
+  - job_name: "prod_aml_screening_1a"
+    static_configs:
+      - targets: [ "10.10.142.199:9100" ]
+
+  - job_name: "prod_aml_screening_1b"
+    static_configs:
+      - targets: [ "10.10.157.127:9100" ]
+
+  - job_name: "prod_scb_backend_1a"
+    static_configs:
+      - targets: [ "10.10.134.94:9100" ]
+
+  - job_name: "prod_scb_backend_1b"
+    static_configs:
+      - targets: [ "10.10.150.180:9100" ]
+
+  - job_name: "prod_support_1a"
+    static_configs:
+      - targets: [ "10.10.140.225:9100" ]
+
+  - job_name: "prod_support_1b"
+    static_configs:
+      - targets: [ "10.10.146.70:9100" ]
+
+  - job_name: "prod_support_1c"
+    static_configs:
+      - targets: [ "10.10.163.126:9100" ]
+
+  - job_name: "prod_fund_transfer_1a"
+    static_configs:
+      - targets: [ "10.10.134.141:9100" ]
+
+  - job_name: "prod_fund_transfer_1b"
+    static_configs:
+      - targets: [ "10.10.158.220:9100" ]
+
+  - job_name: "prod_payme_reports_1a"
+    static_configs:
+      - targets: [ "10.10.136.235:9100" ]
+
+  - job_name: "prod_payme_reports_1b"
+    static_configs:
+      - targets: [ "10.10.154.37:9100" ]
+
+  - job_name: "prod_liquiloan_1a"
+    static_configs:
+      - targets: [ "10.10.143.6:9100" ]
+
+  - job_name: "prod_liquiloan_1b"
+    static_configs:
+      - targets: [ "10.10.146.153:9100" ]
+
+  - job_name: "prod_crm_backend_new_1a"
+    static_configs:
+      - targets: [ "10.10.132.248:9100" ]
+
+  - job_name: "prod_lms_backend_1a"
+    static_configs:
+      - targets: [ "10.10.128.17:9100" ]
+
+  - job_name: "prod_lms_backend_1b"
+    static_configs:
+      - targets: [ "10.10.152.29:9100" ]
+
+  - job_name: "prod_vpn_primary_1a"
+    static_configs:
+      - targets: [ "10.10.6.38:9100" ]
+
+  - job_name: "prod_vpn_root_1b"
+    static_configs:
+      - targets: [ "10.10.9.158:9100" ]
+
+  - job_name: "prod_vpn_secondary_1c"
+    static_configs:
+      - targets: [ "10.10.13.232:9100" ]
+
+  - job_name: "prod_vpn_third_party_1d"
+    static_configs:
+      - targets: [ "10.10.2.110:9100" ]
+
+  - job_name: "prod_grafana_1a"
+    static_configs:
+      - targets: [ "10.10.134.160:9100" ]
+
+  - job_name: "prod_jenkins_1a"
+    static_configs:
+      - targets: [ "10.10.135.83:9100" ]
+
+  - job_name: "prod_redis_node_1a"
+    static_configs:
+      - targets: [ "10.10.135.226:9100" ]
+
+  - job_name: "prod_whatsapp_backend_1a"
+    static_configs:
+      - targets: [ "10.10.142.196:9100" ]
+
+  - job_name: "prod_whatsapp_backend_1b"
+    static_configs:
+      - targets: [ "10.10.151.82:9100" ]
+
+  - job_name: "prod_transunion_report_1a"
+    static_configs:
+      - targets: [ "10.10.133.130:9100" ]
+
+  - job_name: "prod_transunion_report_1b"
+    static_configs:
+      - targets: [ "10.10.156.176:9100" ]
+
+  - job_name: "prod_frontend_1a"
+    static_configs:
+      - targets: [ "10.10.137.131:9100" ]
+
+  - job_name: "prod_frontend_1b"
+    static_configs:
+      - targets: [ "10.10.158.173:9100" ]
+
+  - job_name: "prod_frontend_1c"
+    static_configs:
+      - targets: [ "10.10.160.19:9100" ]
+
+  - job_name: "prod_backend_1a"
+    static_configs:
+      - targets: [ "10.10.134.232:9100" ]
+
+  - job_name: "prod_backend_1b"
+    static_configs:
+      - targets: [ "10.10.150.219:9100" ]
+
+  - job_name: "prod_backend_1c"
+    static_configs:
+      - targets: [ "10.10.169.110:9100" ]
+
+  - job_name: "prod_app_backend_1a"
+    static_configs:
+      - targets: [ "10.10.134.0:9100" ]
+
+  - job_name: "prod_app_backend_1b"
+    static_configs:
+      - targets: [ "10.10.149.201:9100" ]
+
+  - job_name: "prod_app_backend_1c"
+    static_configs:
+      - targets: [ "10.10.165.34:9100" ]
+
+  - job_name: "prod_kibana_1a"
+    static_configs:
+      - targets: [ "10.10.129.8:9100" ]
+
+  - job_name: "prod_api_v2_1a"
+    static_configs:
+      - targets: [ "10.10.131.114:9100" ]
+
+  - job_name: "prod_api_v2_1b"
+    static_configs:
+      - targets: [ "10.10.145.85:9100" ]
+
+  - job_name: "prod_api_v2_1c"
+    static_configs:
+      - targets: [ "10.10.174.224:9100" ]
+
+  - job_name: "prod_mongo_cluster_1a"
+    static_configs:
+      - targets: [ "10.10.128.16:9100" ]
+
+  - job_name: "prod_mongo_cluster_1b"
+    static_configs:
+      - targets: [ "10.10.150.91:9100" ]
+
+  - job_name: "prod_risk_engine_1a"
+    static_configs:
+      - targets: [ "10.10.135.111:9100" ]
+
+  - job_name: "prod_risk_engine_1b"
+    static_configs:
+      - targets: [ "10.10.147.27:9100" ]
+
+  - job_name: "prod_vpn_rds_1d"
+    static_configs:
+      - targets: [ "10.10.8.96:9100" ]
+      
+  - job_name: "prod_fleet_server_1a"
+    static_configs:
+      - targets: [ "10.10.132.251:9100" ]
+      
+  - job_name: "prod_elasticsearch_1a"
+    static_configs:
+      - targets: [ "10.10.129.39:9100" ]
+
+  - job_name: "prod_elasticsearch_1b"
+    static_configs:
+      - targets: [ "10.10.147.114:9100" ]
+
+  - job_name: "prod_elasticsearch_1c"
+    static_configs:
+      - targets: [ "10.10.161.37:9100" ]
+
+  - job_name: "prod_mongo_cluster_1c"
+    static_configs:
+      - targets: [ "10.10.162.111:9100" ]
+
+  - job_name: "prod_api_v2_1d"
+    static_configs:
+      - targets: [ "10.10.133.136:9100" ]
+
+  - job_name: "prod_sahamati_1a"
+    static_configs:
+      - targets: [ "10.10.135.208:9100" ]
+
+  - job_name: "prod_sahamati_1b"
+    static_configs:
+      - targets: [ "10.10.135.157:9100" ]
+
+  - job_name: "prod_sahamati_1c"
+    static_configs:
+      - targets: [ "10.10.162.236:9100" ]
+
+  - job_name: "prod_cash_flow_1a"
+    static_configs:
+      - targets: [ "10.10.162.96:9100" ]
+
+  - job_name: "prod_cash_flow_1b"
+    static_configs:
+      - targets: [ "10.10.166.205:9100" ]
+
+  - job_name: "prod_ab_module_1a"
+    static_configs:
+      - targets: [ "10.10.142.184:9100" ]
+
+  - job_name: "prod_ab_module_1b"
+    static_configs:
+      - targets: [ "10.10.136.66:9100" ]
+
+  - job_name: "prod_credit_assist_backend_1a"
+    static_configs:
+      - targets: [ "10.10.143.152:9100" ]
+
+  - job_name: "prod_credit_assist_backend_1b"
+    static_configs:
+      - targets: [ "10.10.129.18:9100" ]
+
+  - job_name: "prod_ckyc_server_1a"
+    static_configs:
+      - targets: [ "10.10.130.167:9100" ]
+
+  - job_name: "prod_ckyc_server_1b"
+    static_configs:
+      - targets: [ "10.10.129.219:9100" ]
+
+  - job_name: "prod_cibil_1a"
+    static_configs:
+      - targets: [ "10.10.143.5:9100" ]
+
+  - job_name: "prod_cibil_1b"
+    static_configs:
+      - targets: [ "10.10.144.103:9100" ]
+
+  - job_name: "prod_credit_assist_app_backend_1a"
+    static_configs:
+      - targets: [ "10.10.129.201:9100" ]
+
+  - job_name: "prod_credit_assist_app_backend_1b"
+    static_configs:
+      - targets: [ "10.10.128.143:9100" ]
+
+  - job_name: "prod_cron_1a"
+    static_configs:
+      - targets: [ "10.10.134.183:9100" ]
+
+  - job_name: "prod_etl_1a"
+    static_configs:
+      - targets: [ "10.10.167.205:9100" ]
+
+  - job_name: "prod_utils_1a"
+    static_configs:
+      - targets: [ "10.10.129.60:9100" ]
+
+  - job_name: "prod_utils_1b"
+    static_configs:
+      - targets: [ "10.10.134.118:9100" ]

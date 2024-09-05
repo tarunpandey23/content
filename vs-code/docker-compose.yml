@@ -1,0 +1,191 @@
+version: "2.1"
+services:
+  code-server-1:
+    image: linuxserver/code-server:latest
+    container_name: tokyo
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiaone
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8001:8443"
+    restart: unless-stopped
+
+  code-server-2:
+    image: linuxserver/code-server:latest
+    container_name: rio
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiatwo
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8002:8443"
+    restart: unless-stopped
+    
+  code-server-3:
+    image: linuxserver/code-server:latest
+    container_name: berlin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiathree
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8003:8443"
+    restart: unless-stopped
+
+  code-server-4:
+    image: linuxserver/code-server:latest
+    container_name: kangaroo
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiafour
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8004:8443"
+    restart: unless-stopped
+
+
+  code-server-5:
+    image: linuxserver/code-server:latest
+    container_name: penguin
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiafive
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8005:8443"
+    restart: unless-stopped
+
+
+  code-server-6:
+    image: linuxserver/code-server:latest
+    container_name: flamingo
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiasix
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8006:8443"
+    restart: unless-stopped
+
+
+  code-server-7:
+    image: linuxserver/code-server:latest
+    container_name: butter
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiaseven
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8007:8443"
+    restart: unless-stopped
+
+  code-server-8:
+    image: linuxserver/code-server:latest
+    container_name: giraffe
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiaeight
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8008:8443"
+    restart: unless-stopped
+
+
+  code-server-9:
+    image: linuxserver/code-server:latest
+    container_name: pickle
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindianine
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8009:8443"
+    restart: unless-stopped
+
+
+  code-server-10:
+    image: linuxserver/code-server:latest
+    container_name: banana
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - SUDO_PASSWORD=paymeindiaten
+      - HASHED_PASSWORD=
+      - SUDO_PASSWORD_HASH=
+      - PROXY_DOMAIN=code-server.my.domain
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /home/user/code-server-data:/config
+    ports:
+      - "8010:8443"
+    restart: unless-stopped
+
+  
+  
+
+  

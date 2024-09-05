@@ -1,0 +1,19 @@
+# Docker Compose file for InfluxDB
+
+services:
+    influxdb:
+      image: 'influxdb:2'
+      container_name: prod_influx
+      env_file:
+        - ./.env
+      ports:
+        - '80:8086'
+      volumes:
+        - influxdb_data:/var/lib/influxdb2
+        - influxdb_conf:/etc/influxdb2
+
+volumes:
+  influxdb_data:
+    driver: local
+  influxdb_conf:
+    driver: local

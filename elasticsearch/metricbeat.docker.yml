@@ -1,0 +1,47 @@
+metricbeat.config:
+  modules:
+    path: ${path.config}/modules.d/*.yml
+    # Reload module configs as they change:
+    reload.enabled: false
+
+metricbeat.autodiscover:
+  providers:
+    - type: docker
+      hints.enabled: true
+
+metricbeat.modules:
+- module: docker
+  metricsets:
+    - "container"
+    - "cpu"
+    - "diskio"
+    - "healthcheck"
+    - "info"
+    #- "image"
+    - "memory"
+    - "network"
+  hosts: ["unix:///var/run/docker.sock"]
+  period: 10s
+  enabled: true
+
+processors:
+  - add_cloud_metadata: ~
+
+output.elasticsearch:
+  hosts: 'http://100.100.128.165:9200'
+  username: 'elastic'
+  password: 'bgXx1tFhKZKAWcvr58dGkEgEl0hHSG'
+
+
+
+docker run -d \
+  --name=metricbeat \
+  --user=root \
+  --volume="$(pwd)/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml:ro" \
+  --volume="/var/run/docker.sock:/var/run/docker.sock:ro" \
+  --volume="/sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro" \
+  --volume="/proc:/hostfs/proc:ro" \
+  --volume="/:/hostfs:ro" \
+  docker.elastic.co/beats/metricbeat:8.7.1 metricbeat -e \
+  -E output.elasticsearch.hosts=["http://100.100.128.165:9200"] \
+  -E cloud.auth=elastic:bgXx1tFhKZKAWcvr58dGkEgEl0hHSG

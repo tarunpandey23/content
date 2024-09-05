@@ -1,0 +1,61 @@
+version: '2.2'
+services:
+  nginx:
+    container_name: jenkins_nginx
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    networks:
+      - stag_dev_jenkins
+    volumes:
+      - /var/log/nginx/:/var/log/nginx/
+
+  app:
+    image: jenkins/jenkins
+    container_name: jenkins_app
+    restart: always
+    environment:
+      - DOCKER_HOST=tcp://docker:2376
+      - DOCKER_CERT_PATH=/certs/client
+      - DOCKER_TLS_VERIFY=1
+    volumes:
+      - data:/var/jenkins_home
+      - docker_certs:/certs/client:ro
+      - ./ssh:/root/.ssh
+    networks:
+      - stag_dev_jenkins
+    privileged: true
+    user: root
+
+  stag_dev_node:
+    networks:
+      - stag_dev_jenkins
+    container_name: jenkins_stag_dev_node
+    restart: always
+    image: jenkins/ssh-agent
+    privileged: true
+    user: root
+    ports:
+      - "22"
+    volumes:
+      - stag_dev_node:/home/jenkins
+      - ./ssh/config:/home/jenkins/.ssh/config
+    depends_on:
+      - app
+    environment:
+      - JENKINS_AGENT_SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3IFNElH2gqdTcjVTQVS2kHjPS4AIdUC+f0wyGVnV7ohPVNA+rIZ9XviIFL+KVvMJGuD6bmehhhktB0nbY58Hx0tGGMJpDK0Pg+vYW15MK07Nmt6VcZEwjiImUMfN0+4RgDFUYUgqsfIJNkEWufsFsiMTW12kipRmMCcvZTb0hXO+GRJNSsLjh703OelsOQMX96EDFlku+KEzwc2F6e1riDlsK5tKT0tu4jcWRgXPKndG6OOLq/m9pYwfUg5y97+1gAdW7fI35AmjwyQx45Ijt6vCuxtrP/apUuPibFBadXDx7Uwon1hl6xNavcetm+VlatiUa7jZ1N6xiOLSBhHhEvkgwrU3I2eATXTdck75N72LQVNJbC2ydrNirk0k10r2ykCvCGjKLKUqRC12l+azhQTOV/Nz6AJIzsg6qES/Jk22oN2Tvh/WQ01MEOTP+kSC8H59FsIfs6vuNZYxGPsyxztVlxf4yLEGeJAsOaU7KLwDglqcS4HSQPTx63AQQfdWfXpMpZphnTYbxul0AYHijaNKOya1TsJo3uB3K7DT+Ek0oc6NlwsQ+Wpu3dJ300BV3v6cFZFrzoGKTVAq6NYDegOTOGp7vbRfIdCpH22RJpo1W4tTvL1bL/xJowliR7EmRGyGjmDJ5UxxRyaDsnEdNhnhIEnwk8k3lJuaCNDK63Q== stag_dev_jenkins.paymeindia.in
+
+volumes:
+  data:
+    driver: local
+  docker_certs:
+    driver: local
+  stag_dev_node:
+    driver: local
+
+networks:
+  stag_dev_jenkins:
+    driver: bridge
